@@ -14,7 +14,7 @@ val trinkets_version: String by extra
 val cca_version: String by extra
 
 plugins {
-    id("com.possible-triangle.gradle") version ("0.1.4")
+    id("com.possible-triangle.gradle") version ("0.0.0-dev")
 }
 
 withKotlin()
@@ -59,6 +59,9 @@ repositories {
             includeGroup("dev.onyxstudios.cardinal-components-api")
         }
     }
+
+    maven { url = uri("https://mvn.devos.one/snapshots/") }
+    maven { url = uri("https://maven.terraformersmc.com/releases/") }
 }
 
 dependencies {
@@ -71,7 +74,7 @@ dependencies {
 
     if (!env.isCI) {
         modRuntimeOnly("mezz.jei:jei-${mc_version}-fabric:${jei_version}")
-        modRuntimeOnly("dev.emi:emi-fabric:${emi_version}")
+        modRuntimeOnly("dev.emi:emi:${emi_version}")
 
         //modRuntimeOnly("com.electronwill.night-config:core:${night_config_version}")
         //modRuntimeOnly("com.electronwill.night-config:toml:${night_config_version}")

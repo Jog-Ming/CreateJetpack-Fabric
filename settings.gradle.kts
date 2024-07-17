@@ -2,7 +2,7 @@ val mod_name: String by extra
 
 pluginManagement {
     repositories {
-        gradlePluginPortal()
+        mavenLocal()
         maven { url = uri("https://maven.minecraftforge.net/") }
         maven { url = uri("https://repo.spongepowered.org/repository/maven-public/") }
     }

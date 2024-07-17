@@ -12,7 +12,7 @@ import com.simibubi.create.content.equipment.armor.BacktankUtil
 import io.github.fabricators_of_create.porting_lib.event.client.OverlayRenderCallback
 import net.minecraft.client.Minecraft
 import net.minecraft.client.gui.GuiComponent
-import net.minecraft.network.chat.Component
+import net.minecraft.network.chat.TranslatableComponent
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.phys.Vec2
@@ -91,7 +91,7 @@ object ControlsDisplay {
                 val textScale = 0.5F
                 poseStack.scale(textScale, textScale, textScale)
                 val textMargin = (startX + 8 + spriteWidth * index) * (1 / textScale)
-                val text = Component.translatable("overlay.flightlib.control.${key.name.lowercase()}")
+                val text = TranslatableComponent("overlay.flightlib.control.${key.name.lowercase()}")
                 val color = if (active) 0xFFFFFF else 0xBBBBBB
                 GuiComponent.drawCenteredString(
                     poseStack, mc.font, text, textMargin.toInt(), startY * 2 + 36, color
